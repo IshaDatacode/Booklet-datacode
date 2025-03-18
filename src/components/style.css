@@ -1,0 +1,50 @@
+.top-55{
+    top:55%;
+}
+.top-65{
+    top:65%;
+}
+
+.fs-2vmax{
+    font-size: 2vmax;
+}
+.top-73{
+    top:73%;
+}
+.left-60{
+    left:60%;
+}
+.fs-1vmax{
+    font-size: 1.5vmax;
+}
+.fs-29px{
+    font-size: 29px;
+}
+.bg-color-blue{
+    background-color: #4A83F6;
+    cursor: pointer;
+}
+.bg-color-grey{
+    background-color: #282837;
+}
+.fs-74px{
+    font-size: 74px;
+}
+.fs-19px{
+    font-size: 19px;
+}
+.text-color-blue{
+    color: #4A83F6;
+}
+.bg-imp{
+    background-color: #1D1D2A !important;
+}
+.h-4vmin{
+    height: 4vmin;
+}
+.h-7vmin{
+    height: 7vmin;
+}
+.w-65{
+    width:65%;
+}
