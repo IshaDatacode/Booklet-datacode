@@ -8,9 +8,9 @@ import Rectangle6 from "../assets/Rectangle6.png"
 import Rectangle7 from "../assets/Rectangle7.png"
 import ContinueCard from './ContinueCard'
 import { Link } from 'react-router-dom'
-import './style.css'
+import './style.scss'
 
-function Home() {
+const Home=()=>{
   
   const cardJson=[
     {

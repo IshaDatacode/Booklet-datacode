@@ -2,7 +2,8 @@ import React from 'react'
 import ContinueCard from './ContinueCard'
 import Table from './Table'
 
-function Details() {
+
+const Details=()=> {
   return (
     <div id="main" className='main-container h-auto w-100 px-5 pb-5 pt-0'>
       <div className=' container h-auto w-100 '>

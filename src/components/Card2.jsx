@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Card2({ url, title, subtitle }) {
+
+const Card2=({ url, title, subtitle })=> {
   return (
     <div className="card border border-0 px-4 bg-color-grey">
       <img src={url} class=" rounded-4 w-auto bg-color-grey" height={210} alt="..." />

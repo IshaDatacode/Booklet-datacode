@@ -8,8 +8,7 @@ import { NavLink } from 'react-router-dom'
 import Logo from "../assets/logo-text.png"
 
 
-
-function Dashboard({ openSidebarToggle, openSidebar }) {
+const Dashboard=({ openSidebarToggle, openSidebar })=> {
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
       <div className='sidebar-title '>

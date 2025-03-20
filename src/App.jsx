@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Dashboard from './components/Dashboard'
-import './App.css'
+import './App.scss'
 import Navbar from './components/Navbar'
 import { Outlet } from 'react-router-dom'
 function App() {

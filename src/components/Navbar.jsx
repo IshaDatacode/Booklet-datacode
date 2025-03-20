@@ -4,7 +4,7 @@ import Ellipse from "../assets/Ellipse1.png"
 import search from "../assets/search.png"
 import { BsJustify } from 'react-icons/bs'
 
-function Navbar({ openSidebar }) {
+const Navbar=({ openSidebar })=> {
 
   return (
     <header className='header  '>
