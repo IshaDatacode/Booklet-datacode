@@ -1,38 +1,38 @@
-import React from 'react'
-import Image1 from "../assets/image1.png"
-import Image2 from "../assets/image2.png"
-import Card from './Card'
+import { Link } from 'react-router-dom'
+
+import Image1 from "../../assets/images/im"
+import Card from '../../components/ui/Card'
 import Image3 from "../assets/image3.png"
 import Image4 from "../assets/image4.png"
 import Rectangle6 from "../assets/Rectangle6.png"
 import Rectangle7 from "../assets/Rectangle7.png"
-import ContinueCard from './ContinueCard'
-import { Link } from 'react-router-dom'
-import './style.scss'
+import ContinueCard from '../../components/ui/ContinueCard'
 
-const Home=()=>{
-  
-  const cardJson=[
-    {
-      "url":Image3,
-      "title": "The Flash, Vol.1",
-      "subtitle":"Joshua Williamson",
-    },
-    {
-      "url":Image4,
-      "title": "Titans, Vol.2",
-      "subtitle":"Andrew Robinson",
-    }, {
-      "url":Rectangle6,
-      "title": "Harley Quinn, Vol.1",
-      "subtitle":"Jimmy Palmiotti",
-    }, {
-      "url":Rectangle7,
-      "title": "Suicide Squad #8",
-      "subtitle":"Tom Taylor",
-    }
-  ];
-  
+const cardJson = [
+  {
+    "url": Image3,
+    "title": "The Flash, Vol.1",
+    "subtitle": "Joshua Williamson",
+  },
+  {
+    "url": Image4,
+    "title": "Titans, Vol.2",
+    "subtitle": "Andrew Robinson",
+  }, {
+    "url": Rectangle6,
+    "title": "Harley Quinn, Vol.1",
+    "subtitle": "Jimmy Palmiotti",
+  }, {
+    "url": Rectangle7,
+    "title": "Suicide Squad #8",
+    "subtitle": "Tom Taylor",
+  }
+];
+
+
+const Dashboard = () => {
+
+
   return (
     <div id='main' className='main-container px-5 pb-5 pt-0 '>
       <div className='container'>
@@ -60,10 +60,10 @@ const Home=()=>{
         <div className="container ps-0 h-auto">
           <div className="row h-auto ">
             {
-              cardJson.map((data,index)=>(
+              cardJson.map((data, index) => (
                 <div className="h-auto col-sm-6 col-md-4 col-lg-3 " key={index}>
-                <Card url={data.url} title={data.title} subtitle={data.subtitle} />
-              </div>
+                  <Card url={data.url} title={data.title} subtitle={data.subtitle} />
+                </div>
               ))
             }
           </div>
@@ -73,4 +73,4 @@ const Home=()=>{
   )
 }
 
-export default Home
+export default Dashboard

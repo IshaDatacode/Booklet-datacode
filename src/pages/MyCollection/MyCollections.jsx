@@ -1,12 +1,12 @@
 import React from 'react'
-import ContinueCard from './ContinueCard'
+import ContinueCard from '../../components/ui/ContinueCard'
 import Image2 from "../assets/image2.png"
-import Card from './Card'
+import Card from '../../components/ui/Card'
 import Image3 from "../assets/image3.png"
 import Image4 from "../assets/image4.png"
 import Rectangle6 from "../assets/Rectangle6.png"
 import Rectangle7 from "../assets/Rectangle7.png"
-import Card2 from './Card2'
+import Card2 from '../../components/ui/Card2'
 
 
 function MyCollections() {

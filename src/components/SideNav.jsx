@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import VectorIcon from "../assets/Vector.png"
 import Fav from "../assets/Fav.png"
 import Book from "../assets/Book.png"
 import Setting from "../assets/Setting.png"
 import Arrow from "../assets/Arrow.png"
-import { NavLink } from 'react-router-dom'
 import Logo from "../assets/logo-text.png"
 
-
-const Dashboard=({ openSidebarToggle, openSidebar })=> {
+const SideNav = ({ openSidebarToggle, openSidebar }) => {
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
       <div className='sidebar-title '>
@@ -40,13 +39,9 @@ const Dashboard=({ openSidebarToggle, openSidebar })=> {
           <div className='text-white fs-4 py-2'> <img src={Setting} className='me-2' />Settings</div>
           <div className='text-white  fs-4 py-2'  ><img src={Arrow} className='me-2' />Log Out</div>
         </div>
-
       </div>
-
     </aside>
   )
 }
 
-export default Dashboard
-
-
+export default SideNav

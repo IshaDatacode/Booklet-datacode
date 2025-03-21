@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
-import Dashboard from './components/Dashboard'
-import './App.scss'
-import Navbar from './components/Navbar'
 import { Outlet } from 'react-router-dom'
+
+import './App.scss'
+import './assets/scss/style.scss'
+
+import Dashboard from './components/Dashboard'
+import Navbar from './components/Navbar'
+
 function App() {
    const [openSidebarToggle,setOpenSidebarToggle]=useState(false);
    const openSidebar=()=>{

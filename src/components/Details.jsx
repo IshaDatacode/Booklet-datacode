@@ -1,6 +1,6 @@
 import React from 'react'
-import ContinueCard from './ContinueCard'
-import Table from './Table'
+import ContinueCard from './ui/ContinueCard'
+import Table from './ui/Table'
 
 
 const Details=()=> {
