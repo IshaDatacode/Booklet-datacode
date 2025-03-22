@@ -7,7 +7,6 @@ import Image4 from "../../assets/images/image4.png"
 import Rectangle6 from "../../assets/images/Rectangle6.png"
 import Rectangle7 from "../../assets/images/Rectangle7.png"
 import ContinueCard from '../../components/ui/ContinueCard'
-import Popup from '../../components/ui/Popup'
 
 const cardJson = [
   {
