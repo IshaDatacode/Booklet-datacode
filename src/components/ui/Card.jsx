@@ -1,7 +1,4 @@
-import React from 'react'
-import './style.scss'
-
-const Card=({ url, title, subtitle })=> {
+const Card = ({ url, title, subtitle }) => {
   return (
     <div className="bg-imp card border border-0 px-4 px-md-2 pe-lg-5">
       <img src={url} className="bg-imp rounded-4" alt="..." />
@@ -13,7 +10,6 @@ const Card=({ url, title, subtitle })=> {
         </p>
       </div>
     </div>
-
   )
 }
 

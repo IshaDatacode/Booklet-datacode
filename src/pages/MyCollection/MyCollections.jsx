@@ -1,37 +1,36 @@
-import React from 'react'
 import ContinueCard from '../../components/ui/ContinueCard'
-import Image2 from "../assets/image2.png"
+import Image2 from "../../assets/images/image2.png"
 import Card from '../../components/ui/Card'
-import Image3 from "../assets/image3.png"
-import Image4 from "../assets/image4.png"
-import Rectangle6 from "../assets/Rectangle6.png"
-import Rectangle7 from "../assets/Rectangle7.png"
+import Image3 from "../../assets/images/image3.png"
+import Image4 from "../../assets/images/image4.png"
+import Rectangle6 from "../../assets/images/Rectangle6.png"
+import Rectangle7 from "../../assets/images/Rectangle7.png"
 import Card2 from '../../components/ui/Card2'
 
+const cardJson=[
+  {
+    "url":Image3,
+    "title": "The Flash, Vol.1",
+    "subtitle":"Joshua Williamson",
+  },
+  {
+    "url":Image4,
+    "title": "Titans, Vol.2",
+    "subtitle":"Andrew Robinson",
+  }, 
+  {
+    "url":Rectangle6,
+    "title": "Harley Quinn, Vol.1",
+    "subtitle":"Jimmy Palmiotti",
+  }, 
+  {
+    "url":Rectangle7,
+    "title": "Suicide Squad #8",
+    "subtitle":"Tom Taylor",
+  }
+];
 
-function MyCollections() {
-  const cardJson=[
-      {
-        "url":Image3,
-        "title": "The Flash, Vol.1",
-        "subtitle":"Joshua Williamson",
-      },
-      {
-        "url":Image4,
-        "title": "Titans, Vol.2",
-        "subtitle":"Andrew Robinson",
-      }, 
-      {
-        "url":Rectangle6,
-        "title": "Harley Quinn, Vol.1",
-        "subtitle":"Jimmy Palmiotti",
-      }, 
-      {
-        "url":Rectangle7,
-        "title": "Suicide Squad #8",
-        "subtitle":"Tom Taylor",
-      }
-    ];
+const MyCollections = () => {
   return (
     <div id='main' className=' main-container px-5 pb-5 pt-0'>
       <div className=' container'>
@@ -46,7 +45,7 @@ function MyCollections() {
           </div>
           <div className='col-md-4 d-block  align-items-center text-center p-0 text-lg-end ' >
             <h3 className=" fs-29px continue-text  fw-bolder "  >Continue reading</h3>
-            <ContinueCard text="Kobra Kai: Ultimate" progress={75} />
+            <ContinueCard text="Kobra Kai: Ultimate" />
           </div>
         </div>
       </div>

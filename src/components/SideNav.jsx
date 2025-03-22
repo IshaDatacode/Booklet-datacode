@@ -1,16 +1,16 @@
 import { NavLink } from 'react-router-dom'
 
-import VectorIcon from "../assets/Vector.png"
-import Fav from "../assets/Fav.png"
-import Book from "../assets/Book.png"
-import Setting from "../assets/Setting.png"
-import Arrow from "../assets/Arrow.png"
-import Logo from "../assets/logo-text.png"
+import VectorIcon from "../assets/images/Vector.png"
+import Fav from "../assets/images/Fav.png"
+import Book from "../assets/images/Book.png"
+import Setting from "../assets/images/Setting.png"
+import Arrow from "../assets/images/Arrow.png"
+import Logo from "../assets/images/logo-text.png"
 
 const SideNav = ({ openSidebarToggle, openSidebar }) => {
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
-      <div className='sidebar-title '>
+      <div className='sidebar-title'>
         <img src={Logo} className='icon' />
         <span onClick={openSidebar} className='d-md-inline d-lg-none text-danger'>X</span>
       </div>
@@ -21,13 +21,13 @@ const SideNav = ({ openSidebarToggle, openSidebar }) => {
             Dashboard
           </NavLink>
         </li>
-        <li className="sidebar-list-item  ">
+        <li className="sidebar-list-item">
           <NavLink to='/myCollections' className={({ isActive }) => `Nav ${isActive ? "bg-color-blue" : ""}`}>
             <img className='icon me-2' src={Book} height={20} width={20} />
             My Collections
           </NavLink>
         </li>
-        <li className="sidebar-list-item ">
+        <li className="sidebar-list-item">
           <NavLink to='/favourites' className={({ isActive }) => `Nav ${isActive ? "bg-color-blue" : ""}`}>
             <img className='icon me-2' src={Fav} height={20} width={20} />
             Favourites

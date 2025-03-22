@@ -1,26 +1,27 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import './App.scss'
 import './assets/scss/style.scss'
-
-import Dashboard from './components/Dashboard'
 import Navbar from './components/Navbar'
+import SideNav from './components/SideNav'
 
-function App() {
-   const [openSidebarToggle,setOpenSidebarToggle]=useState(false);
-   const openSidebar=()=>{
-    setOpenSidebarToggle(prev=> !prev);
-   }
+
+
+const App = () => {
+
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const openSidebar = () => {
+    setOpenSidebarToggle(prev => !prev);
+  }
+
   return (
     <div className='body'>
-    <div className='grid-container' >
-       <Navbar openSidebar={openSidebar}/>
-       <Dashboard openSidebarToggle={openSidebarToggle} openSidebar={openSidebar} />
-       <Outlet/>
-     </div>
+      <div className='grid-container' >
+        <Navbar openSidebar={openSidebar} />
+        <SideNav openSidebarToggle={openSidebarToggle} openSidebar={openSidebar} />
+        <Outlet />
+      </div>
     </div>
-      
   )
 }
 
