@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink,Link} from 'react-router-dom'
 
 import VectorIcon from "../assets/images/Vector.png"
 import Fav from "../assets/images/Fav.png"
@@ -11,7 +11,7 @@ const SideNav = ({ openSidebarToggle, openSidebar }) => {
   return (
     <aside id='sidebar' className={openSidebarToggle ? "sidebar-responsive" : ""}>
       <div className='sidebar-title'>
-        <img src={Logo} className='icon' />
+       <Link to='/createBook'><img src={Logo} className='icon' /></Link> 
         <span onClick={openSidebar} className='d-md-inline d-lg-none text-danger'>X</span>
       </div>
       <ul className="sidebar-list pt-3">
@@ -36,8 +36,8 @@ const SideNav = ({ openSidebarToggle, openSidebar }) => {
       </ul>
       <div className='setting d-flex p-4 align-items-end ps-5' >
         <div className='text-white'>
-          <div className='text-white fs-4 py-2'> <img src={Setting} className='me-2' />Settings</div>
-          <div className='text-white  fs-4 py-2'  ><img src={Arrow} className='me-2' />Log Out</div>
+       <div className='text-white fs-4 py-2'> <img src={Setting} className=' me-2' />Settings</div>
+       <div className='text-white fs-4 py-2'> <img src={Arrow} className=' me-2' />Log Out</div>
         </div>
       </div>
     </aside>

@@ -37,7 +37,7 @@ const Dashboard = () => {
           <div className='col-md-8  p-0'>
             <div className="homeImage w-auto  " >
               <div className="card  z-1 border border-0 text-white  position-relative h-100 w-auto" >
-                <img src={Image1} className="card-img  z-1  h-100 position-absolute w-100 rounded-3 " alt="..." />
+               <Link to='/signup' state={{Image1}}> <img src={Image1} className="card-img  z-1  h-100 position-absolute w-100 rounded-3 " alt="..." /></Link>
                 <div className='w-100 h-100  position-absolute bottom-0 p-4 d-flex flex-column gap-col-3'>
                   <h6 className="top-55 z-1 position-absolute fw-lighter  fs-5" >Frank Miller</h6>
                   <h2 className='top-65 fs-2vmax fw-bolder z-1 text-start position-absolute pt-2 pb-0 pe-lg-5' >Batman: <br /> The dark Knight</h2>
