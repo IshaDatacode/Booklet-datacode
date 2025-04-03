@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux'
+
 import ContinueCard from '../../components/ui/ContinueCard'
 import Image2 from "../../assets/images/image2.png"
 import Card from '../../components/ui/Card'
@@ -31,32 +33,33 @@ const cardJson=[
 ];
 
 const MyCollections = () => {
+  const books = useSelector(state=>state.books)
   return (
-    <div id='main' className=' main-container px-5 pb-5 pt-0'>
+    <div id='main' className=' main-container px-3 px-sm-5 pt-0'>
       <div className=' container'>
-        <div className='row '>
-          <div className='bg-color-grey col-md-8 rounded-4 text-center p-3 mt-4' >
-            <h3 className='fs-29px text-lg-start fs-3 fw-bolder ps-4 pb-3 text-sm-center' >Completed Read</h3>
-            <div className='bg-color-grey d-flex flex-wrap flex-lg-nowrap  h-auto justify-content-center align-items-center gap-3'  >
+        <div className='row gap '>
+          <div className=' bg-color-grey col-md-8  rounded-4 text-center p-3 mt-4' >
+            <h3 className='fs-29px complete-text-align fs-3 fw-bolder ps-4 pb-3 ' >Completed Read</h3>
+            <div className='bg-color-grey d-flex flex-wrap h-auto justify-content-center align-items-center gap-3'  >
               <Card2 url={Image2} title="Kobra Kai: Ultimate" subtitle="12 Feb 2025" />
               <Card2 url={Image2} title="Kobra Kai: Ultimate" subtitle="12 Feb 2025" />
               <Card2 url={Image2} title="Kobra Kai: Ultimate" subtitle="12 Feb 2025" />
             </div>
           </div>
-          <div className='col-md-4 d-block  align-items-center text-center p-0 text-lg-end ' >
-            <h3 className=" fs-29px continue-text  fw-bolder "  >Continue reading</h3>
-            <ContinueCard text="Kobra Kai: Ultimate" />
+          <div className='col-md-4  continue-card continue-text-align' >
+            <h3 className=" continue-text  fw-bolder ">Continue reading</h3>
+            <ContinueCard text="Kobra Kai: Ultimate"/>
           </div>
         </div>
       </div>
       <div>
-        <h3 className='fs-29px text-center text-md-start h-auto w-auto fw-bolder py-4'>Todo Read</h3>
+        <h3 className='fs-29px text-center text-lg-start h-auto w-auto fw-bolder py-4'>Todo Read</h3>
         <div className="container h-auto p-0">
           <div className="row h-auto p-0">
             {
-               cardJson.map((data,index)=>(
-                <div className="h-auto col-sm-6 col-md-4 col-lg-3" key={index}>
-                <Card url={data.url} title={data.title} subtitle={data.subtitle} />
+               books.map((data,index)=>(
+                <div className="h-auto col-sm-6 col-md-4 custom-col-4 col-lg-3 text-center" key={data.id}>
+                <Card url={Image4} title={data.bookTitle} subtitle={data.bookAuthor} chapters={data.noOfChapters} />
               </div>
               ))
             } 
@@ -66,5 +69,4 @@ const MyCollections = () => {
     </div>
   )
 }
-
 export default MyCollections

@@ -32,10 +32,10 @@ const Table = () => {
           {
             TableData.map((data, index) => (
               <tr key={index}>
-                <th className='fw-bold ps-0 fs-4 text-white text-start' scope="row" style={{ backgroundColor: '#1D1D2A' }}>{data.th}</th>
-                <td className='fw-normal ps-0 fs-4 text-white text-start' style={{ backgroundColor: '#1D1D2A' }}>{data.td1}</td>
-                <td className="fw-normal fs-4  ps-0 text-start" style={{ backgroundColor: '#1D1D2A', color: "#4A83F6" }}>{data.td2}</td>
-                <td className="fw-normal fs-4 ps-0 text-start" style={{ backgroundColor: '#1D1D2A', color: '#FFC70E' }}>{data.td3}</td>
+                <th className='fw-bold fs-4 ps-0 text-white text-start bg-imp' scope="row">{data.th}</th>
+                <td className='fw-normal fs-4 ps-0 text-white text-start bg-imp'>{data.td1}</td>
+                <td className="color-blue fw-normal fs-4 ps-0 text-start bg-imp">{data.td2}</td>
+                <td className="color-yellow fw-normal fs-4 ps-0 text-start bg-imp">{data.td3}</td>
               </tr>
             ))
           }
@@ -44,5 +44,4 @@ const Table = () => {
     </div>
   )
 }
-
 export default Table

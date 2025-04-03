@@ -12,5 +12,4 @@ const Card2 = ({ url, title, subtitle }) => {
     </div>
   )
 }
-
 export default Card2

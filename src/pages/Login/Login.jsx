@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 
 import Logo from '../../assets/images/logo-text.png'
 
-
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,8 +14,8 @@ const Login = () => {
    const {url}=location.state || {};
    
     return (
-        <div className="w-100 d-flex vh-100 ">
-            <div className="w-50 h-100 d-flex flex-column align-items-center justify-content-center gap-4 ">
+        <div className="w-100 d-flex flex-md-row flex-column vh-100 ">
+            <div className="login-data  d-flex flex-column align-items-center justify-content-center gap-2 gap-md-4 ">
                 <div><img src={Logo} className='icon' /></div>
                 <div className='fs-2'>login In To Get Inside</div>
                 <form className='p-3 w-75 ' onSubmit={handleSubmit}>
@@ -33,7 +32,7 @@ const Login = () => {
                     </div>
                 </form>
             </div>
-            <div className='h-100 w-50'>
+            <div className='login-img'>
                 <img src={url} className='h-100 w-100' />
             </div>
         </div>

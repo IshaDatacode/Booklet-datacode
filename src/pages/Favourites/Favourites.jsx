@@ -3,5 +3,4 @@ const Favourites = () => {
     <div></div>
   )
 }
-
 export default Favourites

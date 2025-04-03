@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Logo from '../../assets/images/logo-text.png'
-import { useLocation } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState("");
@@ -10,11 +10,12 @@ const Signup = () => {
         e.preventDefault();
         console.log(`Email:${email},Password:${password}`);
     }
-    const location=useLocation();
-    const {Image1}=location.state || {};
+    const location = useLocation();
+    const { Image1 } = location.state || {};
+
     return (
-        <div className="w-100 d-flex vh-100 ">
-            <div className="w-50 h-100 d-flex flex-column align-items-center justify-content-center gap-4 ">
+        <div className="w-100 d-flex flex-md-row flex-column vh-100 ">
+            <div className="login-data d-flex flex-column align-items-center justify-content-center gap-2 gap-md-4 ">
                 <div><img src={Logo} className='icon' /></div>
                 <div className='fs-2'>Sign In To Get Inside</div>
                 <form className='p-3 w-75 ' onSubmit={handleSubmit}>
@@ -31,7 +32,7 @@ const Signup = () => {
                     </div>
                 </form>
             </div>
-            <div className='h-100 w-50'>
+            <div className='login-img'>
                 <img src={Image1} className='h-100 w-100' />
             </div>
         </div>
