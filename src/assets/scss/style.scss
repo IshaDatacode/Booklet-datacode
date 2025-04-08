@@ -4,16 +4,13 @@ $bg-main: #1D1D2A;
 .top-55 {
   top: 55%;
 }
-
 .top-65 {
   top: 65%;
 }
-
 .fs-2vmax {
   font-size: 2vmax;
 }
-
-.top-55 {
+.top-55{
   top: 55%;
 }
 .color-blue{
@@ -44,8 +41,17 @@ $bg-main: #1D1D2A;
   background-color: $bg-blue;
   cursor: pointer;
 }
+.h-4vmin{
+  height: 4vmin;
+}
+.h-7vmin{
+  height: 7vmin;
+}
 .bg-color-grey {
   background-color: #282837;
+}
+.border-head{
+  border: 2px solid #303039;
 }
 .fs-74px {
   font-size: 74px;
@@ -61,15 +67,6 @@ $bg-main: #1D1D2A;
 }
 .bg-grey {
   background-color: #282837 !important;
-}
-.h-4vmin {
-  height: 4vmin;
-}
-.h-7vmin {
-  height: 7vmin;
-}
-.w-65 {
-  width: 65%;
 }
 .fs-25px {
   font-size: 25px;
@@ -87,6 +84,10 @@ $bg-main: #1D1D2A;
   height: 40%;
 }
 
+.text-capitalizes{
+  text-transform: capitalize;
+}
+
 /* General Styles */
 body {
   margin: 0;
@@ -95,7 +96,35 @@ body {
   color: rgb(244, 244, 249);
   font-family: 'Montserrat', sans-serif;
 }
+/* card clickable */
+.card-clickable{
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-clickable:hover{
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+}
 
+/*scroll bar*/
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: $bg-main ;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4B4B4B; 
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
 /* Grid Container */
 .grid-container {
   display: grid;
@@ -104,7 +133,6 @@ body {
   grid-template-areas:
     "sidebar header header header"
     "sidebar main main main";
-  height: 100vh;
   background-color: $bg-main;
 
 }
@@ -121,11 +149,10 @@ body {
 /* Navbar */
 .header {
   grid-area: header;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 45px;
+  padding: 20px 50px;
 }
 /*popup*/
 .popup {
@@ -134,7 +161,6 @@ body {
   font-size: 25px;
   width: 270px;
   height: 250px;
-
 }
 
 //////*sideNavbar*///////////
@@ -153,10 +179,7 @@ body {
 .sidebar-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 30px 0px;
-  margin-bottom: 30px;
+  padding: 10px 20px 20px 30px;
 }
 
 /* Sidebar List */
@@ -164,18 +187,14 @@ body {
   padding: 0;
   list-style-type: none;
 }
-
 .sidebar-list-item {
   transition: background 0.3s ease;
   margin-right: 15px;
 }
-
 .Nav {
-  padding: 20px 20px 20px 50px;
-  font-size: 24px;
+  padding: 10px 20px 10px 30px;
   border-radius: 20px;
 }
-
 
 /* Sidebar Links */
 .sidebar-list-item a {
@@ -184,7 +203,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 
 /* Sidebar Icons */
 .icon {
@@ -209,24 +227,20 @@ body {
 }
 
 /* dashboard */
-.homeImage {
-  height: 52vh;
-}
-
 .heading {
   padding: 10px 0px;
+}
+.homeImage{
+  height: 380px;
 }
 
 /* continue card*/
 .continue-text {
-  margin-bottom: 15%;
+  margin-bottom: 40px;
   font-size: 29px;
 }
 .continue-card-text {
-  font-size: 24px;
-}
-.continue-img {
-  width: 65%;
+  font-size: 22px;
 }
 
 /* create book*/
@@ -239,26 +253,38 @@ body {
   text-align: start;
 }
 
-/* Mobile Responsive */
+//for Laptop device// 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
   .custom-col-4 {
     width: 33.33%;
   }
   .continue-text {
-    margin-bottom: 15%;
     font-size: 24px;
   }
   .continue-card-text {
     font-size: 20px;
   }
-  .continue-img {
-    width: 90%;
+}
+@media screen and (max-width: 1200px) {
+  .complete-text-align {
+    text-align: center;
   }
 }
-
+@media screen and (min-height: 1024px) and (max-height: 1370px) {
+  .homeImage {
+    height: 30vh;
+  }
+}
+.continue-text-align {
+  text-align: center;
+}
+@media screen and (min-width:1200px) {
+  .continue-text-align {
+    text-align: end;
+  }
+}
 @media screen and (max-width: 1300px) and (min-width: 992px) {
   .continue-text {
-    margin-bottom: 15%;
     font-size: 22px;
   }
   .continue-card-text {
@@ -273,6 +299,7 @@ body {
     font-size: 14px;
   }
 }
+// for medium device //
 @media screen and (max-width: 992px) and (min-width: 767px) {
   .continue-text {
     margin-bottom: 15%;
@@ -280,10 +307,7 @@ body {
   }
   .continue-card-text {
     font-size: 18px;
-  }
-  .continue-img {
-    width: 90%;
-  }
+  } 
 }
 @media screen and (max-width: 992px) {
   .grid-container {
@@ -307,13 +331,15 @@ body {
     width: 60%;
   }
   .Nav {
-    padding: 15px 15px 15px 30px;
+    padding: 10px 15px 10px 30px;
   }
  .sidebar-list-item {
     transition: background 0.3s ease;
     margin-right: 20px;
   }
 }
+
+// Mobile Responsive //
 @media screen and (max-width: 767px) {
   .continue-card {
     width: 100%;
@@ -335,14 +361,8 @@ body {
   .table{
     width: 900px;
   }
-  .continue-img {
-    width: 200px;
-  }
   .create-book {
     width: 90%;
-  }
-  .homeImage {
-    height: 40vh;
   }
   .popup{
     font-size: 20px;
@@ -350,22 +370,10 @@ body {
     height: 180px;
     right: 15px;
   }
-}
-@media screen and (max-width: 1200px) {
-  .complete-text-align {
-    text-align: center;
+  .sidebar-title{
+    padding-bottom: 70px;
   }
-}
-@media screen and (min-height: 1024px) and (max-height: 1370px) {
-  .homeImage {
-    height: 30vh;
-  }
-}
-.continue-text-align {
-  text-align: center;
-}
-@media screen and (min-width:1200px) {
-  .continue-text-align {
-    text-align: end;
+  .homeImage{
+    height: 340px;
   }
 }

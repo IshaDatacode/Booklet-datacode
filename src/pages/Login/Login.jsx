@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
+import Image3 from '../../assets/images/image3.png'
 import Logo from '../../assets/images/logo-text.png'
 
 const Login = () => {
@@ -10,16 +10,13 @@ const Login = () => {
         e.preventDefault();
         console.log(`Email:${email},Password:${password}`);
     }
-   const location=useLocation();
-   const {url}=location.state || {};
-   
     return (
-        <div className="w-100 d-flex flex-md-row flex-column vh-100 ">
-            <div className="login-data  d-flex flex-column align-items-center justify-content-center gap-2 gap-md-4 ">
+        <div className="d-flex flex-md-row flex-column vh-100 ">
+            <div className="login-data d-flex flex-column align-items-center justify-content-center gap-2 gap-md-4 ">
                 <div><img src={Logo} className='icon' /></div>
                 <div className='fs-2'>login In To Get Inside</div>
                 <form className='p-3 w-75 ' onSubmit={handleSubmit}>
-                    <div className="form-group py-3 ">
+                    <div className="form-group py-3">
                         <label htmlFor="email" className=''>Email</label>
                         <input type="email" onChange={(e) => setEmail(pre => pre = e.target.value)} className="form-control bg-imp text-white p-2" id="email" aria-describedby="email" placeholder="" />
                     </div>
@@ -33,7 +30,7 @@ const Login = () => {
                 </form>
             </div>
             <div className='login-img'>
-                <img src={url} className='h-100 w-100' />
+                <img src={Image3} className='w-100 h-100' />
             </div>
         </div>
     )

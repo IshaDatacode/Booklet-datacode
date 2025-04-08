@@ -6,13 +6,13 @@ import search from "../assets/images/search.png"
 
 const Navbar = ({ openSidebar, dropdown, setDropdown }) => {
   return (
-    <header className='header'>
+    <header  className='header'>
       <div onClick={openSidebar} className='menu-icon d-inline fs-2 d-lg-none text-white'>
         <BsJustify className="icon"/>
       </div>
-      <div className='w-65 header-left'>
+      <div className='col-8 header-left'>
         <div className="input-group">
-          <input type="text" className="bg-imp form-control text-white border border-end-0  m-0" aria-label="" />
+          <input type="text" className="bg-imp form-control text-white border border-end-0 " aria-label="" />
           <span className="bg-imp input-group-text border border-start-0"><img src={search} height={20} width={20} /></span>
         </div>
       </div>

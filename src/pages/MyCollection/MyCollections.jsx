@@ -54,12 +54,12 @@ const MyCollections = () => {
       </div>
       <div>
         <h3 className='fs-29px text-center text-lg-start h-auto w-auto fw-bolder py-4'>Todo Read</h3>
-        <div className="container h-auto p-0">
-          <div className="row h-auto p-0">
+        <div className="container  p-0 ">
+          <div className="row  p-0 ">
             {
-               books.map((data,index)=>(
-                <div className="h-auto col-sm-6 col-md-4 custom-col-4 col-lg-3 text-center" key={data.id}>
-                <Card url={Image4} title={data.bookTitle} subtitle={data.bookAuthor} chapters={data.noOfChapters} />
+               books.map((data)=>(
+                <div className="col-sm-6 col-md-4 custom-col-4 col-lg-3 text-center" key={data.id}>
+                <Card url={Image4} title={data.bookTitle} subtitle={data.bookAuthor} id={data.id} chapters={data.noOfChapters} />
               </div>
               ))
             } 
