@@ -41,7 +41,7 @@ const SideNav = ({ openSidebarToggle, openSidebar }) => {
             </NavLink>
           </li>
           <li className="sidebar-list-item">
-            <NavLink to='/createBook' className={({ isActive }) => `fs-4 Nav ${isActive ? "bg-color-blue" : ""}`}>
+            <NavLink to='/createBook/New' className={({ isActive }) => `fs-4 Nav ${isActive ? "bg-color-blue" : ""}`}>
               <img className='icon me-2' src={Book} height={20} width={20} />
               Create Book
             </NavLink>

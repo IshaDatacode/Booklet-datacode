@@ -7,11 +7,20 @@ $bg-main: #1D1D2A;
 .top-65 {
   top: 65%;
 }
+.top-30{
+  top:30%;
+}
+.m-25{
+  margin-top: 20% ;
+}
 .fs-2vmax {
   font-size: 2vmax;
 }
 .top-55{
   top: 55%;
+}
+.start-40{
+  left: 40%;
 }
 .color-blue{
    color: #4A83F6 !important;
@@ -53,6 +62,9 @@ $bg-main: #1D1D2A;
 .border-head{
   border: 2px solid #303039;
 }
+.border-data{
+  border: 1px solid #303039;
+}
 .fs-74px {
   font-size: 74px;
 }
@@ -83,9 +95,37 @@ $bg-main: #1D1D2A;
 .h-40 {
   height: 40%;
 }
-
+.top-40{
+  top: 40%;
+}
+.start-35{
+  left: 35%;
+}
+.color-green{
+  color: #7DEF0B !important;
+}
+.text-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
 .text-capitalizes{
   text-transform: capitalize;
+}
+/*status popup*/
+.status-popup{
+  width: 400px;
+  height: 200px;
+}
+/*ellipse*/
+.ellipse-1{
+  display: none;
+}
+.card:hover .ellipse-1{
+    display: block;
 }
 
 /* General Styles */
@@ -108,7 +148,7 @@ body {
 
 /*scroll bar*/
 .scrollbar::-webkit-scrollbar {
-  width: 8px;
+  height: 10px;
   background-color: $bg-main ;
 }
 
@@ -118,7 +158,8 @@ body {
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: rgb(48, 45, 45);
+  border-radius: 10px;
 }
 
 .invisible-scrollbar::-webkit-scrollbar {
@@ -252,7 +293,28 @@ body {
 .complete-text-align {
   text-align: start;
 }
-
+.delete{
+  display: none;
+}
+.editbtn{
+  display: none;
+}
+.delete:hover{
+  background-color: $bg-blue;
+}
+.editbtn:hover{
+  background-color: $bg-blue;
+}
+.chapter:hover{
+  .delete{
+    display: block;
+    border: 1px solid white;
+  }
+  .editbtn{
+    display: block;
+    border: 1px solid white;
+  }
+}
 //for Laptop device// 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
   .custom-col-4 {
@@ -376,4 +438,9 @@ body {
   .homeImage{
     height: 340px;
   }
+  .status-popup{
+    width: 300px;
+    height: 200px;
+  }
 }
+

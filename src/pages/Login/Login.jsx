@@ -10,6 +10,7 @@ const Login = () => {
         e.preventDefault();
         console.log(`Email:${email},Password:${password}`);
     }
+    
     return (
         <div className="d-flex flex-md-row flex-column vh-100 ">
             <div className="login-data d-flex flex-column align-items-center justify-content-center gap-2 gap-md-4 ">
