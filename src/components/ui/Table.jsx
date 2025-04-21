@@ -47,7 +47,10 @@ const Table = () => {
   const [openEditPopup, setOpenEditPopup] = useState(false);
   const [status, setStatus] = useState("Pending");
   const deleteChapter = (chapterId) => {
-    dispatch(removeChapter({ id: parseInt(id), chapterId }));
+    const confirmDelete=window.confirm("Do you want to delete this chapter?");
+    if(confirmDelete){
+      dispatch(removeChapter({ id: parseInt(id), chapterId }));
+    }
   }
   const [chapterId, setChapterId] = useState("");
   const handleEdit = (chapterId) => {
@@ -76,8 +79,8 @@ const Table = () => {
             chapters.map((data) => (
               <tr key={data.chapterId}>
                 <th className='cursor-pointer chapter fw-bold fs-4 ps-0 text-white text-start bg-imp d-flex' scope="row">Chapter{data.chapterNumber}<span className="d-flex gap-2 mx-2">
-                  <button className="editbtn btn text-white" onClick={() => handleEdit(data.chapterId)}><AiFillEdit />Edit</button>
-                  <button className="delete btn text-white" onClick={() => deleteChapter(data.chapterId)}><MdDelete />Delete</button></span></th>
+                  <span className="editbtn border-0 px-1 rounded-3 text-white" onClick={() => handleEdit(data.chapterId)}><AiFillEdit /></span>
+                  <span className="delete border-0 px-1 rounded-3 text-white" onClick={() => deleteChapter(data.chapterId)}><MdDelete /></span></span></th>
                 <td className='fw-normal fs-4 ps-0 text-white text-center text-capitalize bg-imp'>{data.chapterName}</td>
                 <td className="color-blue fw-normal fs-4 ps-0 text-center bg-imp">{data.targetDate}</td>
                 {data.status === "Pending" ? <td className="cursor-pointer color-yellow fw-normal fs-4 ps-0 text-center bg-imp " onClick={() => handleStatus(data.chapterId, data.status)}>{data.status}

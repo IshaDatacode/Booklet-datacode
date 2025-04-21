@@ -8,7 +8,7 @@ import Rectangle6 from "../../assets/images/Rectangle6.png"
 import Rectangle7 from "../../assets/images/Rectangle7.png"
 import ContinueCard from '../../components/ui/ContinueCard'
 
-const cardJson = [
+{/*const cardJson = [
   {
     "url": Image3,
     "title": "The Flash, Vol.1",
@@ -27,7 +27,7 @@ const cardJson = [
     "title": "Suicide Squad #8",
     "subtitle": "Tom Taylor",
   }
-];
+];*/}
 
 const Dashboard = () => {
   const books= useSelector(state=>state.books)

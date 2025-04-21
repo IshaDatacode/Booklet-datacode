@@ -15,7 +15,42 @@ const truncate = (str) => {
 }
 
 const initialState = {
-    books: [{ id: randomId(), bookTitle: "Titans, Vol. 2", bookAuthor: "Andrew Robinson", noOfChapters: "20", creationDate: Date.now(), chapterDetails: [] }]
+    books: [{ id: randomId(), bookTitle: "The Secrets of the Universe", bookAuthor: "Jane Doe", noOfChapters: "20", creationDate: Date.now(), chapterDetails: [{
+        chapterId : nanoid(),
+        chapterName: "The Beginning",
+        chapterNumber: 1,
+        targetDate:"2025-03-01",
+        status:"Pending"
+      },
+      {
+        chapterId: nanoid(),
+        chapterName: "The Fabric of Space-Time",
+        chapterNumber: 2,
+        targetDate:"2025-03-02",
+        status:"Pending"
+      },
+      {
+        chapterId: nanoid(),
+        chapterName: "Quantum Realities",
+        chapterNumber: 3,
+        targetDate:"2025-03-03",
+        status:"Pending"
+      },
+      {
+        chapterId: nanoid(),
+        chapterName: "Life and Consciousness",
+        chapterNumber: 4,
+        targetDate:"2025-03-04",
+        status:"Pending"
+      },
+      {
+        chapterId: nanoid(),
+        chapterName: "The Future of Everything",
+        chapterNumber: 5,
+        targetDate:"2025-03-05",
+        status:"Pending"
+      },
+      ] }]
 }
 
 export const bookSlice = createSlice({

@@ -95,11 +95,17 @@ $bg-main: #1D1D2A;
 .h-40 {
   height: 40%;
 }
+.w-10{
+  width: 10%;
+}
 .top-40{
   top: 40%;
 }
 .start-35{
   left: 35%;
+}
+.end-10{
+  right: 10%;
 }
 .color-green{
   color: #7DEF0B !important;
@@ -114,6 +120,11 @@ $bg-main: #1D1D2A;
 }
 .text-capitalizes{
   text-transform: capitalize;
+}
+/*progress-bar*/
+.img-container{
+  display:flex;
+  justify-content:end;
 }
 /*status popup*/
 .status-popup{
@@ -399,6 +410,7 @@ body {
     transition: background 0.3s ease;
     margin-right: 20px;
   }
+ 
 }
 
 // Mobile Responsive //
@@ -441,6 +453,14 @@ body {
   .status-popup{
     width: 300px;
     height: 200px;
+  }
+  .img-container{
+    display:flex;
+    justify-content:center;
+  }
+  .detail-container{
+  display: flex;
+  justify-content: start;
   }
 }
 
