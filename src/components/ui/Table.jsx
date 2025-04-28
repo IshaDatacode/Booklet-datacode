@@ -59,7 +59,9 @@ const Table = () => {
   }
   const handleStatus = (chapterid, chapterStatus) => {
     setStatusChapterId(chapterid);
-    setOpenStatus(pre => !pre);
+    if(chapterStatus==="Pending"){
+      setOpenStatus(pre=>!pre);
+    }
     setStatus(chapterStatus);
   }
   if (chapters.length === 0) {
@@ -70,21 +72,21 @@ const Table = () => {
     )
   }
   return (
-    <div className='scrollbar h-auto w-100 ms-0 table-responsive'>
+    <div className='scrollbar ms-0 table-responsive'>
       {openEditPopup && <AddChapters setOpenChapter={setOpenEditPopup} option="Edit Chapter" chapterId={chapterId} />}
-      {openStatus && status === "Pending" && <Status statusChapterId={statusChapterId} />}
+      {openStatus && status === "Pending" && <Status statusChapterId={statusChapterId} setOpenStatus={setOpenStatus} openStatus={openStatus} />}
       <table className="table align-middle table-borderless" style={{ backgroundColor: '#1D1D2A' }}>
         <tbody style={{ backgroundColor: '#1D1D2A' }}>
           {
             chapters.map((data) => (
-              <tr key={data.chapterId}>
-                <th className='cursor-pointer chapter fw-bold fs-4 ps-0 text-white text-start bg-imp d-flex' scope="row">Chapter{data.chapterNumber}<span className="d-flex gap-2 mx-2">
-                  <span className="editbtn border-0 px-1 rounded-3 text-white" onClick={() => handleEdit(data.chapterId)}><AiFillEdit /></span>
-                  <span className="delete border-0 px-1 rounded-3 text-white" onClick={() => deleteChapter(data.chapterId)}><MdDelete /></span></span></th>
-                <td className='fw-normal fs-4 ps-0 text-white text-center text-capitalize bg-imp'>{data.chapterName}</td>
-                <td className="color-blue fw-normal fs-4 ps-0 text-center bg-imp">{data.targetDate}</td>
-                {data.status === "Pending" ? <td className="cursor-pointer color-yellow fw-normal fs-4 ps-0 text-center bg-imp " onClick={() => handleStatus(data.chapterId, data.status)}>{data.status}
-                </td> : <td className="cursor-pointer color-green fw-normal fs-4 ps-0 text-center bg-imp " onClick={() => handleStatus(data.chapterId, data.status)}>{data.status}
+              <tr key={data.chapterId} >
+                <th className='w-100 cursor-pointer chapter fw-bold fs-4 ps-0 text-white text-start bg-imp d-flex m-0' scope="row">Chapter {data.chapterNumber}
+                  <AiFillEdit className="editbtn border-0 mt-1 ms-2 " onClick={() => handleEdit(data.chapterId)}/>
+                  <MdDelete className="delete border-0 mt-1 ms-2  " onClick={() => deleteChapter(data.chapterId)} /></th>
+                <td className='w-40 fw-normal fs-4 ps-0 text-white text-center text-capitalize bg-imp'>{data.chapterName}</td>
+                <td className="w-20 color-blue fw-normal fs-4 ps-0 text-center bg-imp">{data.targetDate}</td>
+                {data.status === "Pending" ? <td className="w-20 cursor-pointer color-yellow fw-normal fs-4 ps-0 text-center bg-imp" onClick={() => handleStatus(data.chapterId, data.status)}>{data.status}
+                </td> : <td className="w-20 cursor-pointer color-green fw-normal fs-4 ps-0 text-center bg-imp" onClick={() => handleStatus(data.chapterId, data.status)}>{data.status}
                 </td>}
               </tr>
             ))

@@ -4,15 +4,15 @@ import Bell from "../assets/images/Bell.png"
 import Ellipse from "../assets/images/Ellipse1.png"
 import search from "../assets/images/search.png"
 
-const Navbar = ({ openSidebar, dropdown, setDropdown }) => {
+const Navbar = ({ openSidebar, dropdown, setDropdown, setQuery }) => {
   return (
     <header  className='header'>
-      <div onClick={openSidebar} className='menu-icon d-inline fs-2 d-lg-none text-white'>
+      <div onClick={openSidebar} className='menu-icon d-inline fs-2 d-lg-none text-white '>
         <BsJustify className="icon"/>
       </div>
       <div className='col-8 header-left'>
         <div className="input-group">
-          <input type="text" className="bg-imp form-control text-white border border-end-0 " aria-label="" />
+          <input type="text" onChange={(e)=>setQuery(e.target.value.toLowerCase())} className="bg-imp py-13px form-control fs-6 text-white border border-end-0 " aria-label="" />
           <span className="bg-imp input-group-text border border-start-0"><img src={search} height={20} width={20} /></span>
         </div>
       </div>

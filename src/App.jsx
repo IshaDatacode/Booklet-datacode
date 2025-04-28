@@ -12,14 +12,15 @@ const App = () => {
   const openSidebar = () => {
     setOpenSidebarToggle(prev => !prev);
   }
+  const [query,setQuery]=useState('');
 
   return (
     <div className='body'>
       <div className='grid-container' >
-        <Navbar openSidebar={openSidebar} dropdown={dropdown} setDropdown={setDropdown} />
+        <Navbar openSidebar={openSidebar} dropdown={dropdown} setDropdown={setDropdown} setQuery={setQuery}/>
         <SideNav openSidebarToggle={openSidebarToggle} openSidebar={openSidebar} />
         {dropdown?<Popup dropdown={dropdown} setDropdown={setDropdown}/>:""}
-        <Outlet />
+        <Outlet context={query}/>
       </div>
     </div>
   )

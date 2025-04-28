@@ -7,6 +7,7 @@ import Image4 from "../../assets/images/image4.png"
 import Rectangle6 from "../../assets/images/Rectangle6.png"
 import Rectangle7 from "../../assets/images/Rectangle7.png"
 import ContinueCard from '../../components/ui/ContinueCard'
+import { useOutletContext } from 'react-router-dom'
 
 {/*const cardJson = [
   {
@@ -31,8 +32,16 @@ import ContinueCard from '../../components/ui/ContinueCard'
 
 const Dashboard = () => {
   const books= useSelector(state=>state.books)
+  const query= useOutletContext();
+  const searchBook = books.filter((data) =>
+    data.bookTitle.toLowerCase().includes(query) ||
+    data.bookAuthor.includes(query) ||
+    data.bookDescription.includes(query)
+  );
+  
+ 
   return (
-    <div id='main' className='main-container scrollbar px-3 px-lg-5 pb-5 pt-0 '>
+    <div id='main' className='main-container scrollbar px-3 px-lg-5 pb-5'>
       <div className='container'>
         <div className='row ' >
           <div className='col-md-8 p-0'>
@@ -58,7 +67,7 @@ const Dashboard = () => {
         <div className="container ps-0">
           <div className="row  ">
             {
-              books.map((data) => (
+              searchBook.map((data) => (
                 <div className="col-sm-6 col-md-4 col-lg-3 custom-col-4 text-center" key={data.id}>
                   <Card url={Image4} title={data.bookTitle} subtitle={data.bookAuthor} id={data.id} chapters={data.noOfChapters} />
                 </div>
