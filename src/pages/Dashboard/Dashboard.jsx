@@ -35,11 +35,9 @@ const Dashboard = () => {
   const query= useOutletContext();
   const searchBook = books.filter((data) =>
     data.bookTitle.toLowerCase().includes(query) ||
-    data.bookAuthor.includes(query) ||
-    data.bookDescription.includes(query)
+    data.bookAuthor.includes(query) 
   );
   
- 
   return (
     <div id='main' className='main-container scrollbar px-3 px-lg-5 pb-5'>
       <div className='container'>
@@ -58,7 +56,7 @@ const Dashboard = () => {
           </div>
           <div className='col-md-4 continue-text-align continue-card '>
             <h3 className="continue-text fw-bolder">Continue reading</h3>
-            <ContinueCard text="Kobra Kai: Ultimate" />
+            <ContinueCard  NormalPage={true}/>
           </div>
         </div>
       </div>
@@ -69,7 +67,7 @@ const Dashboard = () => {
             {
               searchBook.map((data) => (
                 <div className="col-sm-6 col-md-4 col-lg-3 custom-col-4 text-center" key={data.id}>
-                  <Card url={Image4} title={data.bookTitle} subtitle={data.bookAuthor} id={data.id} chapters={data.noOfChapters} />
+                  <Card url={data.ImageUrl} title={data.bookTitle} subtitle={data.bookAuthor} id={data.id} chapters={data.noOfChapters} />
                 </div>
               ))
             }

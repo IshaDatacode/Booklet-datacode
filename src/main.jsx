@@ -24,11 +24,11 @@ const router = createBrowserRouter(
         <Route path='' element={<Dashboard />} />
         <Route path='myCollections' element={<MyCollections />} />
         <Route path='favourites' element={<Favourites />} />
+        <Route path='library' element={<Library />} />
       </Route>
       <Route path='/:book/:bookstatus' element={<CreateBook />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/library' element={<Library />} />
       <Route path='/addchapters/:id' element={<AddChapters />} />
     </>
   )

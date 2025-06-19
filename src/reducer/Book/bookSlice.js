@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
+import  Image4 from "../../assets/images/image4.png"
 // random book id generartion //
 const randomId = () => {
     const random = Math.floor(Math.random() * 500000);
@@ -23,8 +24,10 @@ const initialState = {
           bookDescription: "A fantasy tale of kingdoms at war, ancient prophecies, and a warrior destined to change the fate of the realm.",
           noOfChapters: "20",
           creationDate: Date.now(),
+          percentage: 10,
+          ImageUrl:  Image4,
           chapterDetails: [
-            { chapterId: nanoid(), chapterName: "The Awakening", chapterNumber: 1, targetDate: "2025-03-01", status: "Pending" },
+            { chapterId: nanoid(), chapterName: "The Awakening", chapterNumber: 1, targetDate: "2025-03-01", status: "Complete" },
             { chapterId: nanoid(), chapterName: "Crown of Storms", chapterNumber: 2, targetDate: "2025-03-02", status: "Pending" },
             { chapterId: nanoid(), chapterName: "The Lost Heir", chapterNumber: 3, targetDate: "2025-03-03", status: "Pending" },
             { chapterId: nanoid(), chapterName: "Echoes of Magic", chapterNumber: 4, targetDate: "2025-03-04", status: "Pending" },
@@ -43,6 +46,8 @@ const initialState = {
           bookDescription: "A science-driven journey through the brain's potential, AI consciousness, and the boundaries of machine learning.",
           noOfChapters: "20",
           creationDate: Date.now(),
+          percentage: 100,
+          ImageUrl:  Image4,
           chapterDetails: [
             { chapterId: nanoid(), chapterName: "The Digital Dawn", chapterNumber: 1, targetDate: "2025-03-01", status: "Complete" },
             { chapterId: nanoid(), chapterName: "Cognitive Code", chapterNumber: 2, targetDate: "2025-03-02", status: "Complete" },
@@ -63,6 +68,8 @@ const initialState = {
           bookDescription: "A mystery unraveling an ancient civilization through hidden clues, lost artifacts, and a race against time.",
           noOfChapters: "20",
           creationDate: Date.now(),
+          percentage: 100,
+          ImageUrl:  Image4,
           chapterDetails: [
             { chapterId: nanoid(), chapterName: "The Dig", chapterNumber: 1, targetDate: "2025-03-01", status: "Complete" },
             { chapterId: nanoid(), chapterName: "Beneath the Dust", chapterNumber: 2, targetDate: "2025-03-02", status: "Complete" },
@@ -83,6 +90,8 @@ const initialState = {
           bookDescription: "A post-apocalyptic adventure where survival, hope, and humanity are put to the ultimate test.",
           noOfChapters: "20",
           creationDate: Date.now(),
+          percentage: 0,
+          ImageUrl:  Image4,
           chapterDetails: [
             { chapterId: nanoid(), chapterName: "Day Zero", chapterNumber: 1, targetDate: "2025-03-01", status: "Pending" },
             { chapterId: nanoid(), chapterName: "Ashes and Echoes", chapterNumber: 2, targetDate: "2025-03-02", status: "Pending" },
@@ -103,6 +112,8 @@ const initialState = {
           bookDescription: "A heartfelt story of a painter rediscovering inspiration, love, and the forgotten masterpieces of his past.",
           noOfChapters: "20",
           creationDate: Date.now(),
+          percentage: 0,
+          ImageUrl:  Image4,
           chapterDetails: [
             { chapterId: nanoid(), chapterName: "Faded Colors", chapterNumber: 1, targetDate: "2025-03-01", status: "Pending" },
             { chapterId: nanoid(), chapterName: "Brushstrokes of Memory", chapterNumber: 2, targetDate: "2025-03-02", status: "Pending" },
@@ -132,10 +143,20 @@ export const bookSlice = createSlice({
                 noOfChapters: action.payload.noOfChapters,
                 creationDate: Date.now(),
                 bookDescription: action.payload.bookDescription,
+                percentage: 0,
+                ImageUrl:  Image4,
                 chapterDetails: []
             }
             state.books.push(book);
         },
+        addPercentage: (state, action) => {
+          const { book, percentage } = action.payload;
+          const foundBook = state.books.find((b) => b.id === book.id);
+          if (foundBook) {
+            foundBook.percentage = percentage;
+          }
+        }
+        ,
         editBookDetails: (state, action) => {
             const { id, bookTitle, bookAuthor, noOfChapters, bookDescription } = action.payload;
             const book = state.books.find((data) => data.id === id);
@@ -194,5 +215,5 @@ export const bookSlice = createSlice({
     }
 })
 
-export const { addBook, editBookDetails, addChapters, removeChapter, editChapter, changeStatus } = bookSlice.actions
+export const { addBook, editBookDetails, addChapters, removeChapter, editChapter, changeStatus, addPercentage } = bookSlice.actions
 export default bookSlice.reducer

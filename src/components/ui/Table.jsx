@@ -60,7 +60,7 @@ const Table = () => {
   const handleStatus = (chapterid, chapterStatus) => {
     setStatusChapterId(chapterid);
     if(chapterStatus==="Pending"){
-      setOpenStatus(pre=>!pre);
+      setOpenStatus(true);
     }
     setStatus(chapterStatus);
   }
